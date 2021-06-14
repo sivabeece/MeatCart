@@ -1,0 +1,100 @@
+.viewcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.img {
+  display: flex;
+  flex-basis: 20%;
+  height: 160px;
+  width: 200px;
+  padding: 1% 1%;
+}
+.title {
+  display: flex;
+  flex-basis: 15%;
+  padding-top: 1%;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.price {
+  display: flex;
+  flex-basis: 15%;
+  padding-top: 1%;
+}
+.quantity {
+  display: flex;
+  flex-basis: 15%;
+  padding-top: 1%;
+}
+.remove {
+  display: flex;
+  flex-basis: 15%;
+  padding-top: 1%;
+}
+.removebtn {
+  width: 80% !important;
+  height: 20% !important;
+  color: #fff !important;
+  background-color: #fd3030 !important;
+}
+.noproduct {
+  text-align: center;
+  font-size: 2rem;
+  color: burlywood;
+  text-shadow: 1px 1px;
+}
+.total {
+  display: flex;
+  flex-basis: 15%;
+  padding-top: 1%;
+  justify-content: flex-end;
+}
+.myprice {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cartheader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.viewheader {
+  display: flex;
+  flex-basis: 35%;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.clsprice,
+.clsquan,
+.clsremove,
+.clstot {
+  display: flex;
+  flex-basis: 15%;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+.clstot {
+  justify-content: flex-end;
+}
+
+.subtotalcont {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1%;
+}
+.subtlbl {
+  display: flex;
+  flex-basis: 20%;
+  color: #aaa;
+  font-size: 1.3rem;
+}
+.subtval {
+  display: flex;
+  flex-basis: 20%;
+  justify-content: flex-end;
+  font-size: 1.3rem;
+  padding-right: 4%;
+}
