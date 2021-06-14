@@ -3,6 +3,7 @@ import HeaderComponent from "./containers/header";
 import ProductComponent from "./containers/productListings";
 import { Menu, Container } from "semantic-ui-react";
 import ViewcartComponent from "./containers/viewcart/viewcart";
+import AddressComponent from "./containers/address/address";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={ProductComponent}></Route>
             <Route path="/viewcart" exact component={ViewcartComponent}></Route>
+            <Route path="/address" exact component={AddressComponent}></Route>
           </Switch>
         </Container>
       </Router>
