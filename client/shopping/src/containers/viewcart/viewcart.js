@@ -93,11 +93,7 @@ export default function ViewcartComponent() {
     return (
       <Link to={"/"}>
         <div>
-          <Image
-            width="100%"
-            height="400px"
-            src="/static/media/emptycart.86792354.png"
-          />
+          <Image width="100%" height="400px" src="emptycart.png" />
 
           <h5 className="noproduct">Your cart is empty</h5>
         </div>

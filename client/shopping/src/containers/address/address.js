@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button, TextArea } from "semantic-ui-react";
+import axios from "axios";
+import { CommonProperties } from "../../shared/common";
 
 export default function AddressComponent() {
   const initialState = {
-    firstname: "siva",
+    firstname: "",
     lastname: "",
     email: "",
     mobile: "",
@@ -14,8 +16,34 @@ export default function AddressComponent() {
   const handleChange = (e) => {
     setAddress({ ...address, [e.target.id]: e.target.value });
   };
-  const postAddress = () => {
-    console.log({ address });
+  const getAddress = async () => {
+    await axios
+      .get(`${CommonProperties.RESOURCE_API}/getuseraddress?id=`)
+      .then((res) => {
+        setAddress(res.data);
+      })
+      .catch((error) => {
+        console.log({ error });
+      });
+  };
+  const postAddress = async () => {
+    await axios
+      .post(`${CommonProperties.RESOURCE_API}/postaddress`, { address })
+      .then((res) => {
+        // setAddress(res.data);
+      })
+      .catch((error) => {
+        console.log({ error });
+      });
+
+    await axios
+      .put(`${CommonProperties.RESOURCE_API}/putaddress`, { address })
+      .then((res) => {
+        // setAddress(res.data);
+      })
+      .catch((error) => {
+        console.log({ error });
+      });
   };
   useEffect(() => {});
   return (

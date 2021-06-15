@@ -76,8 +76,48 @@ nav a:hover {
   align-items: center;
   color: #fff;
 }
+.googlebutton {
+  width: 100%;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5) !important;
+  font-size: 1rem !important;
+  border-radius: 100px !important;
+  text-align: center !important;
+  color: #d11d67 !important;
+  background: #fff !important;
+}
+.googlebutton:hover {
+  box-shadow: inset 9px 9px 16px rgba(163, 177, 198, 0.6),
+    inset -9px -9px 16px rgba(255, 255, 255, 0.5),
+    9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5) !important;
+  cursor: pointer !important;
+}
+
+.imglogin {
+  display: block;
+  width: 80px;
+  margin: 0px auto;
+  box-shadow: 0 5px 10px -7px #333333;
+  border-radius: 50%;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+}
 
 @media screen and (min-width: 800px) {
+  .username {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+    margin-right: 20%;
+  }
   .burger {
     display: none;
   }

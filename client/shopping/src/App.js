@@ -12,7 +12,7 @@ function App() {
         <Menu>
           <HeaderComponent></HeaderComponent>
         </Menu>
-        <Container style={{ marginTop: "5em" }}>
+        <Container style={{ marginTop: "6em" }}>
           <Switch>
             <Route path="/" exact component={ProductComponent}></Route>
             <Route path="/viewcart" exact component={ViewcartComponent}></Route>
