@@ -1,5 +1,7 @@
 export const CommonProperties = {
   RESOURCE_API: "http://localhost:100",
+  GOOGLE_CLIENT_ID:
+    "988445299950-7ohtn6gt7ohummqje0sq61maor1hd7nk.apps.googleusercontent.com",
 };
 
 export const ModalReducer = (state, action) => {

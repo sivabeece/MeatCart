@@ -1,24 +1,31 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import "./navbar.css";
 import { Icon, Modal, Button, Image } from "semantic-ui-react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ModalReducer } from "../../shared/common";
 import { useGoogleLogin } from "react-google-login";
+import { setUserDetails } from "../../redux/actions/productActions";
+import { CommonProperties } from "../../shared/common";
 
 export default function Navbar() {
   const clientId =
     "988445299950-7ohtn6gt7ohummqje0sq61maor1hd7nk.apps.googleusercontent.com";
   const mycart = useSelector((state) => state.mycartItems.myCarts);
+  const { email, givenName } = useSelector((state) => state.userData.userInfo);
+  const [userName, setUserName] = useState("user");
 
   const [state, dispatch] = useReducer(ModalReducer, {
     open: false,
     dimmer: undefined,
   });
   const { open, dimmer } = state;
+
+  const userInfoDispatch = useDispatch();
+
   const onSuccess = (res) => {
-    console.log("Login Success: currentUser:", res.profileObj);
     dispatch({ type: "CLOSE_MODAL" });
+    userInfoDispatch(setUserDetails(res.profileObj));
   };
 
   const onFailure = (res) => {
@@ -31,6 +38,10 @@ export default function Navbar() {
     isSignedIn: true,
     accessType: "offline",
   });
+
+  useEffect(() => {
+    setUserName(givenName);
+  }, [email]);
 
   return (
     <header>
@@ -46,7 +57,7 @@ export default function Navbar() {
         </span>
       </label>
       <nav>
-        <span className="username">Hi User</span>
+        <span className="username">Hi {userName}</span>
         <ul>
           <li>
             <a
