@@ -32,6 +32,26 @@ const initialState = {
       quantity: 1,
       totalamount: 500,
     },
+    {
+      id: 4,
+      imageurl: "https://www.currykadai.in/uploads/9460-cat2.jpg",
+      title: "KatlONea",
+      price: 500,
+      isdiscount: false,
+      discountpercentage: 0,
+      quantity: 1,
+      totalamount: 500,
+    },
+    {
+      id: 5,
+      imageurl: "https://www.currykadai.in/uploads/9460-cat2.jpg",
+      title: "Neimeen",
+      price: 500,
+      isdiscount: false,
+      discountpercentage: 0,
+      quantity: 1,
+      totalamount: 500,
+    },
   ],
 };
 

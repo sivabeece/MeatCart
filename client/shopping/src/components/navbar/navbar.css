@@ -14,7 +14,20 @@ header {
   position: fixed;
   z-index: 100;
   width: 100%;
+}
+.header_wo_scroll {
+  height: 50vh;
+  background-image: url("http://localhost:3000/fm3.jpg");
+  background-repeat: round;
+  background-size: 100% 50vh;
+}
+.header_w_scroll {
+  height: 0px;
+  background-image: none;
+  background-repeat: round;
+  background-size: 0%;
   background-color: #ac5555;
+  min-height: 12vh;
 }
 
 .toggler {
@@ -32,7 +45,10 @@ header {
   text-shadow: 1px 1px 0px;
   letter-spacing: 3px;
 }
-
+nav {
+  /* background-color: #ac5555; */
+  height: 6vh;
+}
 nav ul {
   position: fixed;
   width: 100%;

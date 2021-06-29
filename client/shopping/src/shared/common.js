@@ -14,3 +14,7 @@ export const ModalReducer = (state, action) => {
       throw new Error();
   }
 };
+
+export const formatCurrency = (currency) => {
+  return String(currency).replace(/(\d)(?=(\d\d)+\d$)/g, "$1,");
+};

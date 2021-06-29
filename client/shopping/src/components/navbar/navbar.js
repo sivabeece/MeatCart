@@ -14,6 +14,7 @@ export default function Navbar() {
   const mycart = useSelector((state) => state.mycartItems.myCarts);
   const { email, givenName } = useSelector((state) => state.userData.userInfo);
   const [userName, setUserName] = useState("user");
+  const [cssScroll, setCssScroll] = useState();
 
   const [state, dispatch] = useReducer(ModalReducer, {
     open: false,
@@ -39,12 +40,22 @@ export default function Navbar() {
     accessType: "offline",
   });
 
+  const listenScrollEvent = (e) => {
+    if (window.scrollY > 200) {
+      setCssScroll("header_w_scroll");
+    } else {
+      setCssScroll("header_wo_scroll");
+    }
+  };
+
   useEffect(() => {
     setUserName(givenName);
+    setCssScroll("header_wo_scroll");
+    window.addEventListener("scroll", listenScrollEvent);
   }, [email]);
 
   return (
-    <header>
+    <header className={cssScroll}>
       <h2 className="logo">Fish&Meat</h2>
       <input type="checkbox" id="toggler" className="toggler" />
       <label htmlFor="toggler" className="burger">

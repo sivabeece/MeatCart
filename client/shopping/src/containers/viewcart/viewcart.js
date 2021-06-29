@@ -66,7 +66,6 @@ export default function ViewcartComponent() {
           <hr></hr>
         </div>
       );
-      cartFooter();
     });
   };
 
