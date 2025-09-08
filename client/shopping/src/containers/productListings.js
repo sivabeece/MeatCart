@@ -4,6 +4,9 @@ import { Button, Icon } from "semantic-ui-react";
 import { selectedProduct } from "../redux/actions/productActions";
 import "./productlisting.css";
 import _ from "lodash";
+import "./category.css";
+import { SuccessToast } from "../utils/ProjectToast";
+import { ToastContainer } from "react-toastify";
 
 export default function ProductComponent() {
   const meats = useSelector((state) => state.allProducts.products);
@@ -17,6 +20,9 @@ export default function ProductComponent() {
 
   const addtoCart = (product) => {
     dispatch(selectedProduct(product));
+    setTimeout(() => {
+      SuccessToast("Product added to cart");
+    }, 500);
   };
 
   const loadMeats = () => {
@@ -102,9 +108,44 @@ export default function ProductComponent() {
               <Button.Content hidden>₹{totalamount}</Button.Content>
             </Button>
           </div>
+          <ToastContainer />
         </div>
       );
     });
   };
-  return <div className="mycard-container">{loadMeats()}</div>;
+  return (
+    <div className="productlist">
+      <div className="radio-inputs">
+        <label className="radio">
+          <input type="radio" name="radio" />
+          <span className="name">HTML</span>
+        </label>
+        <label className="radio">
+          <input type="radio" name="radio" />
+          <span className="name">React</span>
+        </label>
+
+        <label className="radio">
+          <input type="radio" name="radio" />
+          <span className="name">Vue</span>
+        </label>
+      </div>
+      {/* <div id="firstFilter" className="filter-switch">
+        <input checked id="chicken" name="options" type="radio" />
+        <label className="option" htmlFor="chicken">
+          Chicken
+        </label>
+        <input id="fish" name="options" type="radio" />
+        <label className="option" htmlFor="fish">
+          Fish
+        </label>
+        <input id="mutton" name="options" type="radio" />
+        <label className="option" htmlFor="mutton">
+          Mutton
+        </label>
+        <span className="background"></span>
+      </div> */}
+      <div className="mycard-container">{loadMeats()}</div>
+    </div>
+  );
 }

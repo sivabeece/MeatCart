@@ -4,6 +4,9 @@ import { Icon, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { removeSelectedProduct } from "../../redux/actions/productActions";
 import "./viewcart.css";
+import { ToastContainer } from "react-toastify";
+import { ErrorToast, SuccessToast } from "../../utils/ProjectToast";
+import EmptyCart from "../../images/empty_cart.svg";
 
 export default function ViewcartComponent() {
   const mycarts = useSelector((state) => state.mycartItems.myCarts);
@@ -32,6 +35,9 @@ export default function ViewcartComponent() {
 
   const removeCart = (product) => {
     dispatch(removeSelectedProduct(product));
+    setTimeout(() => {
+      SuccessToast("Product removed from cart");
+    }, 500);
   };
 
   const loadCart = () => {
@@ -46,7 +52,11 @@ export default function ViewcartComponent() {
             <div className="price myprice">₹{formatCurrency(c.price)}</div>
             <div className="quantity">{c.quantity}</div>
             <div className="remove">
-              <Button
+              <Button className="removebtn" icon>
+                <Icon name="remove" />
+              </Button>
+
+              {/* <Button
                 className="removebtn"
                 animated="vertical"
                 onClick={() => {
@@ -57,7 +67,7 @@ export default function ViewcartComponent() {
                 <Button.Content visible>
                   <Icon name="remove" />
                 </Button.Content>
-              </Button>
+              </Button> */}
             </div>
             <div className="total myprice">
               ₹{formatCurrency(c.totalamount)}
@@ -66,6 +76,7 @@ export default function ViewcartComponent() {
           <hr></hr>
         </div>
       );
+      cartFooter();
     });
   };
 
@@ -92,7 +103,7 @@ export default function ViewcartComponent() {
     return (
       <Link to={"/"}>
         <div>
-          <Image width="100%" height="400px" src="emptycart.png" />
+          <Image width="100%" height="400px" src={EmptyCart} />
 
           <h5 className="noproduct">Your cart is empty</h5>
         </div>
@@ -103,11 +114,12 @@ export default function ViewcartComponent() {
   return (
     <div>
       <div className="cartheader">
-        <div className="viewheader">Shopping Cart</div>
+        <div className="viewheader">Shopping Bag</div>
         <div className="clsprice">Price</div>
         <div className="clsquan">Quantity</div>
         <div className="clsremove">Remove</div>
         <div className="clstot">Total</div>
+        <ToastContainer />
       </div>
       <hr></hr>
 

@@ -1,12 +1,23 @@
+:root {
+  --primary-color: #202020;
+  --secondary-color: #f12711;
+  --tertiary-color: #f5af19;
+  --text-color: #fff;
+  --hover-color: #171717;
+}
+
 .card-outer {
   border-radius: 1rem;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
-    -9px -9px 16px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6),
+    -9px -9px 16px rgba(255, 255, 255, 0.5); */
 }
 
 .mycard-container {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  margin-top: 10%;
 }
 .shopcard {
   display: flex;
@@ -17,7 +28,7 @@
 }
 .shopimage {
   width: 100%;
-  height: 200px;
+  height: 150px;
   display: flex;
   justify-content: flex-end;
 }
@@ -43,6 +54,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  gap: 2px;
+  align-items: baseline;
 }
 .shopprice {
   display: flex;
@@ -91,7 +104,7 @@
     9px 9px 16px rgba(163, 177, 198, 0.6),
     -9px -9px 16px rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  color: #d11d67;
+  color: #d11d67 !important;
 }
 
 .shopaddtocart {
@@ -123,14 +136,21 @@
   display: none;
 }
 .cartcount {
-  position: absolute;
-  top: -60%;
+  position: relative;
+  right: 42% !important;
+  top: -33%;
   font-size: 14px;
-  background: #fff !important;
+  /* background: #fff !important; */
   border-radius: 100%;
   width: 20px;
-  color: #000 !important;
+  color: #ffffff !important;
   text-shadow: none !important;
+  right: 104px;
+  font-weight: 600;
+}
+
+.ui.menu {
+  border: none !important;
 }
 
 .deskcart {
@@ -139,9 +159,16 @@
   color: #fff !important;
 }
 
+.fade:not(.show) {
+  opacity: 1 !important;
+}
+.shopfooter input {
+  width: 80px;
+}
+
 @media screen and (min-width: 800px) {
   .shopcard {
-    width: 25%;
+    flex-basis: 24%;
   }
   .shopheader {
     display: flex;
@@ -157,6 +184,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1%;
+    margin-top: 2%;
   }
   .shopfooter input {
     width: 55px;
@@ -164,13 +193,14 @@
     padding-right: 1%;
   }
   .cartcount {
-    position: absolute;
-    top: 5%;
+    position: relative;
+    right: 42%;
+    top: -33%;
     font-size: 14px;
-    background: #fff !important;
+    /* background: #fff !important; */
     border-radius: 100%;
     width: 20px;
-    color: #000 !important;
+    /* color: #000 !important; */
     text-shadow: none !important;
   }
 }

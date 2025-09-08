@@ -1,0 +1,59 @@
+.productlist {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-inputs {
+  margin-top: 10%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: var(--tertiary-color);
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  font-size: 14px;
+  width: 99%;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 800px) {
+  .radio-inputs {
+    margin-top: 0%;
+  }
+}
+
+:root {
+  --primary-color: #202020;
+  --secondary-color: #f12711;
+  --tertiary-color: #f5af19;
+  --text-color: #fff;
+  --hover-color: #171717;
+}
