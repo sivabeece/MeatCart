@@ -1,16 +1,17 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
 import HeaderComponent from "./containers/header";
 import ProductComponent from "./containers/productListings";
 import { Menu, Container } from "semantic-ui-react";
 import ViewcartComponent from "./containers/viewcart/viewcart";
 import FooterComponent from "./components/footer/footer";
 import "react-toastify/dist/ReactToastify.css";
-import Login from "./containers/login/login";
+import Login from "./containers/login/login.tsx";
+import Layout from "./components/layout.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Layout>
         <Menu>
           <HeaderComponent></HeaderComponent>
         </Menu>
@@ -22,8 +23,7 @@ function App() {
           </Switch>
         </Container>
         <FooterComponent></FooterComponent>
-      </Router>
-    </div>
+    </Layout>
   );
 }
 

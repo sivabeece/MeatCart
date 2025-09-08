@@ -1,11 +1,6 @@
-:root {
-  --primary-color: #202020;
-  --secondary-color: #f12711;
-  --tertiary-color: #f5af19;
-  --text-color: #fff;
-  --hover-color: #171717;
+* {
+  
 }
-
 .card-outer {
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -176,6 +171,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    padding-top: 5px;
   }
   .shopfooter {
     width: 100%;

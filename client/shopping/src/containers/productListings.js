@@ -21,7 +21,7 @@ export default function ProductComponent() {
   const addtoCart = (product) => {
     dispatch(selectedProduct(product));
     setTimeout(() => {
-      SuccessToast("Product added to cart");
+      SuccessToast("Product added to cart", "top-bottom");
     }, 500);
   };
 
@@ -118,16 +118,16 @@ export default function ProductComponent() {
       <div className="radio-inputs">
         <label className="radio">
           <input type="radio" name="radio" />
-          <span className="name">HTML</span>
+          <span className="name">Fish</span>
         </label>
         <label className="radio">
           <input type="radio" name="radio" />
-          <span className="name">React</span>
+          <span className="name">Chicken</span>
         </label>
 
         <label className="radio">
           <input type="radio" name="radio" />
-          <span className="name">Vue</span>
+          <span className="name">Meat</span>
         </label>
       </div>
       {/* <div id="firstFilter" className="filter-switch">

@@ -6,6 +6,7 @@
   --tertiary-color: #f5af19;
   --text-color: #fff;
   --hover-color: #171717;
+  --app-background-color: #C2C2C2;
 }
 
 * {
@@ -18,6 +19,13 @@ body {
   background-color: #f7fcff;
 }
 
+.App{
+  background-color: var(--app-background-color);
+}
+.app-content{
+  background-color: var(--text-color);
+}
+
 header {
   text-align: center;
   position: fixed;
@@ -25,6 +33,16 @@ header {
   width: 100%;
   background-color: var(--primary-color);
   padding: 1em 2em;
+  align-items: center;
+}
+
+.right, .arrow{
+  background-color: var(--tertiary-color) !important;
+}
+.d-f-d-c{
+  flex-direction: column;
+}
+.d-f-c{
   align-items: center;
 }
 
@@ -74,7 +92,7 @@ header {
 nav {
   position: absolute;
   top: 16%;
-  margin-right: 5%;
+  margin-right: calc(-1.5% + 35px);
   right: 0%;
 }
 
