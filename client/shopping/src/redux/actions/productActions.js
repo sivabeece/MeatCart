@@ -27,10 +27,3 @@ export const setKGLimit = (limitKGOrder) => {
     payload: limitKGOrder,
   };
 };
-
-export const setUserDetails = (user) => {
-  return {
-    type: CartActions.SET_USER_DATA,
-    payload: user,
-  };
-};

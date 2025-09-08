@@ -4,7 +4,7 @@ const initialState = {
   products: [
     {
       id: 1,
-      imageurl: "https://www.currykadai.in/uploads/9460-cat2.jpg",
+      imageurl: "/images/boneless.jpg",
       title: "Fish",
       price: 1000,
       isdiscount: true,
@@ -14,7 +14,8 @@ const initialState = {
     },
     {
       id: 2,
-      imageurl: "https://www.currykadai.in/uploads/9460-cat2.jpg",
+      imageurl:
+        "https://assets.licious.in/catalog-category/c2b3abcf-dbc0-4cc2-a5c9-99620a219b8a/original/1740573133192.jpg",
       title: "Sardine",
       price: 350,
       isdiscount: false,
@@ -24,7 +25,8 @@ const initialState = {
     },
     {
       id: 3,
-      imageurl: "https://www.currykadai.in/uploads/9460-cat2.jpg",
+      imageurl:
+        "https://assets.licious.in/catalog-category/c2b3abcf-dbc0-4cc2-a5c9-99620a219b8a/original/1740573133192.jpg",
       title: "Katla",
       price: 500,
       isdiscount: false,
@@ -34,18 +36,20 @@ const initialState = {
     },
     {
       id: 4,
-      imageurl: "https://www.currykadai.in/uploads/9460-cat2.jpg",
-      title: "KatlONea",
-      price: 500,
+      imageurl:
+        "https://assets.licious.in/catalog-category/c2b3abcf-dbc0-4cc2-a5c9-99620a219b8a/original/1740573133192.jpg",
+      title: "Sardine",
+      price: 350,
       isdiscount: false,
       discountpercentage: 0,
       quantity: 1,
-      totalamount: 500,
+      totalamount: 350,
     },
     {
       id: 5,
-      imageurl: "https://www.currykadai.in/uploads/9460-cat2.jpg",
-      title: "Neimeen",
+      imageurl:
+        "https://assets.licious.in/catalog-category/c2b3abcf-dbc0-4cc2-a5c9-99620a219b8a/original/1740573133192.jpg",
+      title: "Katla",
       price: 500,
       isdiscount: false,
       discountpercentage: 0,
